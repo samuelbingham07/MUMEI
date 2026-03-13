@@ -11,7 +11,7 @@
                     "type": "Value",
                     "id": "5d52c700-76e5-4d83-b4b9-c9df96b88c77",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -20,7 +20,7 @@
                     "type": "Value",
                     "id": "be9b0ec3-560c-45af-9b52-16d5c8b0a4c9",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -28,7 +28,7 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "98e8833c-01cb-4305-a9f6-c66d5581e247",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

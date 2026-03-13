@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -44,14 +45,23 @@ TagManager:
   - name: Ground
     uniqueID: 768525641
     locked: 0
-  - name: Material
+  - name: WalkInFront
     uniqueID: 687309799
     locked: 0
-  - name: OnGround
+  - name: Collision
+    uniqueID: 2280268031
+    locked: 0
+  - name: Collision1
     uniqueID: 1285077619
+    locked: 0
+  - name: Decor
+    uniqueID: 3724695539
     locked: 0
   - name: Character
     uniqueID: 4275585301
+    locked: 0
+  - name: WalkBehind
+    uniqueID: 1747460451
     locked: 0
   m_RenderingLayers:
   - Default
