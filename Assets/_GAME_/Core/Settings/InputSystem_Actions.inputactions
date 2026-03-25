@@ -991,6 +991,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SpiritVision",
+            "id": "6fd907a7-0294-41e2-a478-850065c87c12",
+            "actions": [
+                {
+                    "name": "SpiritAction",
+                    "type": "Button",
+                    "id": "73c6b16c-254d-4872-8244-bf1632fd6bee",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bd76af77-b95e-40c0-840a-a9b06cb98f95",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpiritAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
