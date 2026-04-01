@@ -2614,6 +2614,7 @@ GameObject:
   - component: {fileID: 215112259}
   - component: {fileID: 215112261}
   - component: {fileID: 215112260}
+  - component: {fileID: 215112262}
   m_Layer: 0
   m_Name: WalkBehind
   m_TagString: Untagged
@@ -2991,6 +2992,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &215112262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215112258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98222d07af73274ab18a1329fcbcd8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WalkBehindTileFader
+  fadedAlpha: 0.5
+  fadeSpeed: 5
+  radius: 1
 --- !u!1 &252037198
 GameObject:
   m_ObjectHideFlags: 0

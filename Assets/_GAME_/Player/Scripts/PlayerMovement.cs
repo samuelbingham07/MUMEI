@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float footstepSpeed = 0.5f;
 
     private bool inSpiritMode = false;
+    private bool movementLocked = false;
     [SerializeField] private float spiritDeceleration = 6f; // how fast the player slows to a halt
 
     private const float MOVE_EPSILON = 0.01f;
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (inSpiritMode)
+        if (inSpiritMode || movementLocked)
         {
             // Decelerate smoothly to zero
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, Time.deltaTime * spiritDeceleration);
@@ -79,6 +80,17 @@ public class PlayerMovement : MonoBehaviour
     /// Called by SpiritVisionController. Disables input and decelerates the player,
     /// or re-enables movement when spirit mode is turned off.
     /// </summary>
+    public void SetMovementLocked(bool locked)
+    {
+        movementLocked = locked;
+        if (locked)
+        {
+            rb.linearVelocity = Vector2.zero;
+            animator.SetBool("isWalking", false);
+            StopFootsteps();
+        }
+    }
+
     public void SetSpiritMode(bool active)
     {
         inSpiritMode = active;
