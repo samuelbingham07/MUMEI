@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719bf85f89f1216438b42215fbad1fba, type: 3}
   m_Name: NPC_Mortemer
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueData
-  npcID: 
-  npcName: 
-  entries: []
+  npcID: 001
+  npcName: Mortemer
+  entries:
+  - lines:
+    - Hi friend
+    minStoryStage: 0
+    minTalkCount: 0
