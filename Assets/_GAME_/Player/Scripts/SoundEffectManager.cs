@@ -31,9 +31,15 @@ public class SoundEffectManager : MonoBehaviour
         AudioClip audioClip = soundEffectLibrary.GetRandomClip(soundName);
         if (audioClip != null)
         {
-            Instance.audioSource.PlayOneShot(audioClip);
+            audioSource.pitch = Random.Range(0.5f, 1.5f);
+            audioSource.PlayOneShot(audioClip);
         }
+    }
 
+    public void StopAll()
+    {
+        audioSource.Stop();
+        audioSource.pitch = 1f;
     }
 
     void Start()

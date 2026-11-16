@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private bool playingFootsteps = false;
-    public float footstepSpeed = 0.5f;
+    [SerializeField] private float footstepMinInterval = 2.0f;
+    [SerializeField] private float footstepMaxInterval = 3.0f;
 
     private bool inSpiritMode = false;
     private bool movementLocked = false;
@@ -104,18 +106,24 @@ public class PlayerMovement : MonoBehaviour
 
     void StopFootsteps()
     {
+        if (!playingFootsteps) return;
         playingFootsteps = false;
-        CancelInvoke(nameof(PlayFootstep));
+        StopCoroutine(nameof(FootstepCoroutine));
+        SoundEffectManager.Instance?.StopAll();
     }
 
     void StartFootsteps()
     {
         playingFootsteps = true;
-        InvokeRepeating(nameof(PlayFootstep), 0f, footstepSpeed);
+        StartCoroutine(nameof(FootstepCoroutine));
     }
 
-    void PlayFootstep()
+    IEnumerator FootstepCoroutine()
     {
-        SoundEffectManager.Instance.Play("Footstep");
+        while (playingFootsteps)
+        {
+            SoundEffectManager.Instance.Play("Footstep");
+            yield return new WaitForSeconds(Random.Range(footstepMinInterval, footstepMaxInterval));
+        }
     }
 }
